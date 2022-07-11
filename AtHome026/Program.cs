@@ -3,11 +3,12 @@
 // 452 -> 11
 // 82 -> 10
 // 9012 -> 12
-Console.WriteLine("Введите число:");
-int number = Convert.ToInt32(Console.ReadLine());
-int sum = 0;
-for (int i = 1; i <=number; i++)
+Console.WriteLine("Введите число: ");
+int a = Convert.ToInt32(Console.ReadLine());
+int s = 0;
+while (a > 0)
 {
-    sum = sum+i;
+    s = s + (a % 10);
+    a = a / 10;
 }
-Console.WriteLine($"Сумма числа {sum}");
+Console.WriteLine($"Сумма цифр введенного числа={s}");
