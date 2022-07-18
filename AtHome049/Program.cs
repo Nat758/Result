@@ -8,12 +8,12 @@
 double[,] CreateMatrixRndDouble(int m, int n, int min, int max)
 {
     double[,] array = new double[m, n];
-
+    Random rnd = new Random();
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = new Random().NextDouble();
+            array[i, j] = rnd.NextDouble()+ rnd.Next(min,max);
         }
     }
     return array;
@@ -33,5 +33,5 @@ void PrintMatrix(double[,] arr)
         Console.WriteLine();
     }
 }
-double[,] matrix = CreateMatrixRndDouble(3, 4, 100, 100);
+double[,] matrix = CreateMatrixRndDouble(3, 4,-10, 10);
 PrintMatrix(matrix);
