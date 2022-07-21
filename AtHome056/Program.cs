@@ -16,7 +16,7 @@ int[,] GreateMatrixRndInt(int m, int n, int min, int max)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = rnd.Next(min, max + 1);
+            array[i, j] = rnd.Next(min, max +1);
         }
     }
     return array;
@@ -60,4 +60,5 @@ int SumLines(int[,] arra)
 
 int[,] matrix = GreateMatrixRndInt(3,4,1,10);
 PrintMatrix(matrix);
-SumLines(matrix);
+int res=SumLines(matrix);
+Console.WriteLine($"Номер строки с наименьшей суммой {res} ");
