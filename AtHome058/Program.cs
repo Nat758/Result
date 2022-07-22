@@ -30,8 +30,6 @@ void PrintMatrix(int[,] arr)
 }
 
 
-
-
 int[,] WorkMatrix(int[,] arr1, int[,] arr2)
 {
     int[,] arr3 = new int[arr1.GetLength(0), arr2.GetLength(1)];
