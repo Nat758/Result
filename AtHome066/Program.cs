@@ -6,17 +6,22 @@ Console.WriteLine("Введите первое число: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число: ");
 int n = Convert.ToInt32(Console.ReadLine());
-
-int sum = SumNaturalElement(m,n);
+if (m > n)
+{
+    int temp = m;
+    m = n;
+    n = temp;
+}
+int sum = SumNaturalElement(m, n);
 Console.WriteLine($"{sum}");
 
 
 int SumNaturalElement(int numA, int numB)
-{  
-  int sum = 0;
-   for(int i= numA ;i<= numB;i++)
-   {
-     sum+=i;
-   }
-   return sum;
+{
+    int sum = 0;
+    for (int i = numA; i <= numB; i++)
+    {
+        sum += i;
+    }
+    return sum;
 }
