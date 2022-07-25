@@ -7,7 +7,7 @@ NaturalNumber(num);
 
 void NaturalNumber ( int digit)
 {
-    if(digit>0) return;
-    NaturalNumber (digit-1);
+    if(digit==0) return;
     Console.Write($"{digit}");
+    NaturalNumber (digit - 1);
 }
