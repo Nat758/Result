@@ -1,6 +1,6 @@
 ﻿// Задайте две матрицы. Напишите программу, которая будет находить
 // произведение двух матриц.
-int[,]  GreateMatrixRndInt(int m, int n, int min, int max)
+int[,] GreateMatrixRndInt(int m, int n, int min, int max)
 {
     int[,] array = new int[m, n];
     var rnd = new Random();
@@ -33,19 +33,19 @@ void PrintMatrix(int[,] arr)
 int[,] WorkMatrix(int[,] arr1, int[,] arr2)
 {
     int[,] arr3 = new int[arr1.GetLength(0), arr2.GetLength(1)];
-for (int r = 0; r < arr1.GetLength(0); r++)
-{
-    for (int i = 0; i < arr2.GetLength(1); i++)
+    for (int r = 0; r < arr1.GetLength(0); r++)
     {
-        for (int j = 0; j < arr2.GetLength(0); j++)
+        for (int i = 0; i < arr2.GetLength(1); i++)
         {
-            arr3[r, i] += arr1[r, j] * arr2[j, i];
+            for (int j = 0; j < arr2.GetLength(0); j++)
+            {
+                arr3[r, i] += arr1[r, j] * arr2[j, i];
+            }
+
+
         }
-
-
     }
-}
-return arr3;
+    return arr3;
 }
 
 
@@ -56,6 +56,6 @@ PrintMatrix(matrix);
 Console.WriteLine();
 int[,] matrix1 = GreateMatrixRndInt(3, 2, 1, 5);
 PrintMatrix(matrix1);
-int[,] arr0= WorkMatrix(matrix,matrix1);
+int[,] arr0 = WorkMatrix(matrix, matrix1);
 Console.WriteLine();
 PrintMatrix(arr0);
